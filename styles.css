@@ -1,0 +1,105 @@
+/* Custom Styles for Task Tracker */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+body {
+    font-family: 'Inter', system_ui, sans-serif;
+}
+
+.font-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.task-card {
+    transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.task-card:hover {
+    transform: translateY(-1px);
+}
+
+.task-card.dragging {
+    opacity: 0.6;
+    transform: scale(0.98);
+}
+
+.task-text {
+    transition: all 0.2s ease;
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+.priority-badge, .tag-pill {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.1rem 0.55rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.filter-btn {
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background-color: #6366f1;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgb(99 102 241 / 0.25);
+}
+
+.modal {
+    animation: modalPop 0.2s ease forwards;
+}
+
+@keyframes modalPop {
+    from { 
+        opacity: 0; 
+        transform: scale(0.95) translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+    }
+}
+
+.task-item {
+    animation: fadeInUp 0.25s ease forwards;
+}
+
+.empty-state {
+    animation: fadeIn 0.4s ease;
+}
+
+.modern-shadow {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+               0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.section-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.drag-handle {
+    cursor: grab;
+    transition: color 0.2s;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.task-card.dragging {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 
+               0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark .task-card {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 
+               0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
